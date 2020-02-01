@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5001;
 
-var publicDir = require('path').join(__dirname, '/public_images/');
+var publicDir = require('path').join(__dirname, '/public_images/'); //กำหนด path ของไฟล์
 app.use(express.static(publicDir));
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,6 +29,7 @@ app.listen(port, () => {
     console.log('API Start server at port ' + port + '.');
 })
 
+//เรียกใช้งาน router file
 var appRouteUpload = require('./routes/appRouteUpload');
 var appRouteUser = require('./routes/appRouteUser');
 var appRouteShop = require('./routes/appRouteShop');
